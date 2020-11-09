@@ -20,7 +20,7 @@ public class listageneros {
 	 public static JButton btnDrama, btnNSci, btnComedia, btnTerror, btn_inicio, btn_continuar;
 
 
-	private JFrame frame;
+	JFrame frame;
 
 
 	/**
