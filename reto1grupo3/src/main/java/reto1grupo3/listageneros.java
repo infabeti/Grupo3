@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
 
 public class listageneros {
 	
@@ -21,6 +23,7 @@ public class listageneros {
 
 
 	private JFrame frame;
+	private JTextField tiemposabado;
 
 
 	/**
@@ -56,6 +59,9 @@ public class listageneros {
 		btnNSci.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg1) {
 				JOptionPane.showMessageDialog(null, "Ha seleccionado Sci-Fi");
+				
+
+				
 			}
 		});
 		btnNSci.setForeground(Color.WHITE);
@@ -98,9 +104,14 @@ public class listageneros {
 		btnPsicosis.setBounds(28, 215, 213, 266);
 		frame.getContentPane().add(btnPsicosis);
 		
-		JLabel p_Psicosis=new JLabel(variablesPeliculas.psicosis+"  "+variablesPeliculas.nombrepsicosis);
+		String cad1 = variablesPeliculas.psicosis + "";
+		String hora = cad1.substring(0, cad1.indexOf("."));
+		String minutos = cad1.substring(cad1.indexOf(".") + 1);
+
+		
+		JLabel p_Psicosis=new JLabel(hora+" h "+ minutos +" minutos "+variablesPeliculas.nombrepsicosis);
 		p_Psicosis.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 15));
-        p_Psicosis.setBounds(92,492,98,50);
+        p_Psicosis.setBounds(49,492,165,50);
         frame.getContentPane().add(p_Psicosis);
         
         JButton btnCisnenegro = new JButton("");
@@ -108,12 +119,33 @@ public class listageneros {
         btnCisnenegro.setBounds(251, 215, 213, 266);
         frame.getContentPane().add(btnCisnenegro);
         
+		String cad2 = variablesPeliculas.cisnenegro + "";
+		String hora2 = cad2.substring(0, cad2.indexOf("."));
+		String minutos2 = cad2.substring(cad2.indexOf(".") + 1);
+        
 
         
-        JLabel p_cisneNegro = new JLabel(variablesPeliculas.cisnenegro+"  "+variablesPeliculas.nombrecisnenegro);
+        JLabel p_cisneNegro = new JLabel(hora2+" h "+ minutos2 +" minutos "+variablesPeliculas.nombrecisnenegro);
         p_cisneNegro.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 15));
-        p_cisneNegro.setBounds(297, 511, 119, 14);
+        p_cisneNegro.setBounds(270, 510, 185, 14);
         frame.getContentPane().add(p_cisneNegro);
+        
+        JLabel lblNewLabel = new JLabel("TIEMPO RESTANTE:");
+        lblNewLabel.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 17));
+        lblNewLabel.setBounds(612, 159, 145, 14);
+        frame.getContentPane().add(lblNewLabel);
+        
+        JLabel lblNewLabel_1 = new JLabel("S\u00C1BADOS:");
+        lblNewLabel_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 15));
+        lblNewLabel_1.setBounds(612, 215, 117, 28);
+        frame.getContentPane().add(lblNewLabel_1);
+        
+        
+        double totalSabado = variablesPeliculas.horasabados- 8;
+        tiemposabado = new JTextField();
+        tiemposabado.setBounds(612, 254, 86, 20);
+        frame.getContentPane().add(tiemposabado);
+        tiemposabado.setColumns(10);
       
 		
 
