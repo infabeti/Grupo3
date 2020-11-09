@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
-import javax.swing.JTextArea;
 
 public class listageneros {
 	
@@ -24,6 +23,7 @@ public class listageneros {
 
 	private JFrame frame;
 	private JTextField tiemposabado;
+
 
 
 	/**
