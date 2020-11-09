@@ -72,7 +72,7 @@ public class login extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Grupo3\\reto1grupo3\\src\\imagenes\\iconfinder_administrator_43645.png"));
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\iconfinder_administrator_43645.png"));
 		lblNewLabel_2.setBounds(111, 69, 256, 247);
 		contentPane.add(lblNewLabel_2);
 		contentPane.add(BotonEntrar);
@@ -97,7 +97,7 @@ public class login extends JFrame {
 		UsuarioText.setColumns(10);
 		
 		JLabel Labelicono_1 = new JLabel("");
-		Labelicono_1.setIcon(new ImageIcon("C:\\Grupo3\\reto1grupo3\\src\\imagenes\\msn_user_23243.png"));
+		Labelicono_1.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\msn_user_23243.png"));
 		Labelicono_1.setBounds(63, 339, 64, 72);
 		contentPane.add(Labelicono_1);
 		
@@ -108,12 +108,12 @@ public class login extends JFrame {
 		contentPane.add(LabelUsuario);
 		
 		JLabel Labelicono_2 = new JLabel("");
-		Labelicono_2.setIcon(new ImageIcon("C:\\Grupo3\\reto1grupo3\\src\\imagenes\\passwordlock_contrase\u00F1_9979.png"));
+		Labelicono_2.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\passwordlock_contrase\u00F1_9979.png"));
 		Labelicono_2.setBounds(63, 432, 64, 64);
 		contentPane.add(Labelicono_2);
 		
 		JLabel LabelFondo = new JLabel("New label");
-		LabelFondo.setIcon(new ImageIcon("C:\\Grupo3\\reto1grupo3\\src\\imagenes\\FondoAzul.png"));
+		LabelFondo.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\FondoAzul.png"));
 		LabelFondo.setBounds(0, -13, 500, 600);
 		contentPane.add(LabelFondo);
 	}
