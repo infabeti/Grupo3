@@ -6,13 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-<<<<<<< HEAD
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.SystemColor;
-=======
->>>>>>> fda61f254b8d22018363977d994759de0f2470f9
 import javax.swing.JButton;
 
 public class peliSuspenso extends JFrame {
@@ -41,17 +38,12 @@ public class peliSuspenso extends JFrame {
 	 */
 	public peliSuspenso() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-<<<<<<< HEAD
 		setBounds(100, 100, 1032, 592);
-=======
-		setBounds(100, 100, 585, 412);
->>>>>>> fda61f254b8d22018363977d994759de0f2470f9
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-<<<<<<< HEAD
 		JButton btnNewButton_2 = new JButton("New button");
 		btnNewButton_2.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (19).png"));
 		btnNewButton_2.setBounds(562, 138, 170, 240);
@@ -116,7 +108,7 @@ public class peliSuspenso extends JFrame {
 		JLabel LabelTitulo = new JLabel("COMEDIA");
 		LabelTitulo.setForeground(SystemColor.text);
 		LabelTitulo.setFont(new Font("Baskerville Old Face", Font.BOLD, 60));
-		LabelTitulo.setBounds(341, 10, 318, 70);
+		LabelTitulo.setBounds(341, 10, 456, 70);
 		contentPane.add(LabelTitulo);
 		
 		JLabel lblNewLabel = new JLabel("New label");
@@ -124,10 +116,5 @@ public class peliSuspenso extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\FondoAzul.png"));
 		lblNewLabel.setBounds(0, 0, 1034, 573);
 		contentPane.add(lblNewLabel);
-=======
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(10, 62, 127, 130);
-		contentPane.add(btnNewButton);
->>>>>>> fda61f254b8d22018363977d994759de0f2470f9
 	}
 }
