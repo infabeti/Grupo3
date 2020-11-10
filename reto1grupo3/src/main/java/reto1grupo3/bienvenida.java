@@ -46,12 +46,12 @@ public class bienvenida extends JFrame {
 		contentPane.add(LabelTitulo_3);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (16).png"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (16).png"));
 		lblNewLabel.setBounds(-129, -1, 314, 574);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (9).png"));
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (9).png"));
 		lblNewLabel_1.setBounds(203, 27, 400, 519);
 		contentPane.add(lblNewLabel_1);
 		
@@ -60,17 +60,17 @@ public class bienvenida extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (17).png"));
+		lblNewLabel_4.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (17).png"));
 		lblNewLabel_4.setBounds(118, 263, 260, 283);
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (12).png"));
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (12).png"));
 		lblNewLabel_3.setBounds(10, 0, 474, 547);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel LabelFondo = new JLabel("");
-		LabelFondo.setIcon(new ImageIcon("C:\\workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\FondoAzul.png"));
+		LabelFondo.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\FondoAzul.png"));
 		LabelFondo.setBounds(0, -21, 500, 600);
 		contentPane.add(LabelFondo);
 	}
