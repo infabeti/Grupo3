@@ -12,7 +12,7 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import javax.swing.JButton;
 
-public class peliSuspenso extends JFrame {
+public class pelisDrama extends JFrame {
 
 	private JPanel contentPane;
 
@@ -60,8 +60,8 @@ public class peliSuspenso extends JFrame {
 		contentPane.add(btnNewButton_3);
 		
 		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngwing.com (18).png"));
-		btnNewButton.setBounds(47, 138, 170, 240);
+		btnNewButton.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\Handia.jpg"));
+		btnNewButton.setBounds(60, 138, 158, 240);
 		contentPane.add(btnNewButton);
 		
 		JLabel LabelTituloPelicula3 = new JLabel("Cadena");
@@ -105,10 +105,10 @@ public class peliSuspenso extends JFrame {
 		LabelTiempo1.setBounds(28, 399, 206, 56);
 		contentPane.add(LabelTiempo1);
 		
-		JLabel LabelTitulo = new JLabel("COMEDIA");
+		JLabel LabelTitulo = new JLabel("DRAMA");
 		LabelTitulo.setForeground(SystemColor.text);
 		LabelTitulo.setFont(new Font("Baskerville Old Face", Font.BOLD, 60));
-		LabelTitulo.setBounds(341, 10, 456, 70);
+		LabelTitulo.setBounds(383, 0, 290, 70);
 		contentPane.add(LabelTitulo);
 		
 		JLabel lblNewLabel = new JLabel("New label");
