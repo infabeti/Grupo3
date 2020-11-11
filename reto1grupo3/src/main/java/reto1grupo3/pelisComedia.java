@@ -84,7 +84,7 @@ public class pelisComedia extends JFrame {
 		JLabel LabelTituloPelicula1 = new JLabel("MONSTERS");
 		LabelTituloPelicula1.setForeground(SystemColor.text);
 		LabelTituloPelicula1.setFont(new Font("Baskerville Old Face", Font.BOLD, 30));
-		LabelTituloPelicula1.setBounds(36, 109, 226, 56);
+		LabelTituloPelicula1.setBounds(47, 114, 226, 56);
 		contentPane.add(LabelTituloPelicula1);
 		
 		JLabel LabelTiempo4 = new JLabel("");

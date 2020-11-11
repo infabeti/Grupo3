@@ -52,6 +52,7 @@ public class login extends JFrame {
 				if (Usuario.equals("admin")&& Contraseña.equals("123")) {
 					
 					listageneros window = new listageneros();
+					
 				
 					
 					
