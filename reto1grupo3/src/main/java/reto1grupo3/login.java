@@ -53,9 +53,7 @@ public class login extends JFrame {
 					
 					listageneros window = new listageneros();
 					window.frame.setVisible(true);
-					
-				
-					
+
 					
 					
 				}else {

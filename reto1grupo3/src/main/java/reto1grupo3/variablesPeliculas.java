@@ -1,47 +1,74 @@
 package reto1grupo3;
 
+import java.util.ArrayList;
+
 public class variablesPeliculas {
 
 	   static double
-	   BlackSwan=1.56,
-	   Mile=3.17,
-	   InTime=2.22,
-	   Inception=2.13,
-	   Avatar=2.22,
-	   StarTrek=1.15,
-	   Push=1.55,
-	   Priest=1.57,
-	   MonsterInc=1.21,
-	   MinutesOrLess=1.21,
-	   KnockedUp=1.34,
-	   AlvinYLasArdillas=1.28,
-	   Insidious=1.49,
-	   DestinoFinal=2.26,
-	   TheUninvited=2.35,
-	   Constantine=1.50,
 	   horasabados=8,
 	   horadomingos=6;
-	   
-	   
 
-	  int cag;
-	  static String
-	  nombreAvatar="Avatar",
-	  nombreStarTrek="Star Trek",
-	  nombrePush="Push",
-	  nombrePriest="Priest",
-	  nombreMonsterInc="Monster Inc",
-	  nombreMinutesOrLess="30 Minutes Or Less",
-	  nombreKnockedUp="Knocked Up",
-	  nombreAlvinYLasArdillas="Alvin y las ardillas",
-	  nombreInsidious="Insidious",
-	  nombreDestinoFinal="Destino Final 5",
-	  nombreTheUninvited="The Uninvited",
-	  nombreConstantine="Constantine",
-	  nombreBlackSwan="Black Swan",
-	  nombreMile="8 Mile",
-	  nombreInTime="In Time",
-	  nombreInception="Inception";
-
+	  
+	    public static void main(String[] args) {
+	    	 
+	    	ArrayList <listageneros> listapeliculas=new ArrayList<listageneros>();
+	    	listapeliculas.add(new listageneros("Avatar", "Sci-fi", 2.22));
+	    	listapeliculas.add(new listageneros("Star Trek", "Sci-fi", 1.15));
+	    	listapeliculas.add(new listageneros("Push", "Sci-fi", 1.55));
+	    	listapeliculas.add(new listageneros("Priest", "Sci-fi", 1.57));
+	    	listapeliculas.add(new listageneros("Monster Inc", "comedia", 1.21));
+	    	listapeliculas.add(new listageneros("30 Minutes Or Less", "comedia", 1.21));
+	    	listapeliculas.add(new listageneros("Knocked Up", "comedia", 1.34)); 
+	    	listapeliculas.add(new listageneros("Alvin y las ardillas", "comedia", 1.28)); 
+	    	listapeliculas.add(new listageneros("Insidious", "terror", 1.49)); 
+	    	listapeliculas.add(new listageneros("Destino Final 5", "terror", 2.26)); 
+	    	listapeliculas.add(new listageneros("The Uninvited", "terror", 2.35)); 
+	    	listapeliculas.add(new listageneros("Constantine", "terror", 1.50)); 
+	    	listapeliculas.add(new listageneros("Black Swan", "drama", 1.56)); 
+	    	listapeliculas.add(new listageneros("8 Mile", "drama", 3.17)); 
+	    	listapeliculas.add(new listageneros("In Time", "drama", 2.22)); 
+	    	listapeliculas.add(new listageneros("Inception", "drama", 2.13));  
+ 
+	    	
+	    	System.out.println("* Lista de todas las Películas ");
+			
+	    	//for (listageneros e: listapeliculas) {
+	    		//System.out.println(e.dameDatos());  
+	    		//}
+	    	String pelisdrama = "";
+	    	String pelisterror = "";
+	    	String peliscomedia = "";
+	    	String pelisficcion = "";
+       
+	        for(int i=0;i<listapeliculas.size();i++){
+	        	
+	             if(listapeliculas.get(i).genero=="drama"){
+	            	 
+	            	 pelisdrama += listapeliculas.get(i).dameGenero();
+	            	 System.out.println(pelisdrama);
+	            	 
+				}else if(listapeliculas.get(i).genero=="terror"){
+					
+					pelisterror += listapeliculas.get(i).dameGenero();
+	            	 System.out.println(pelisterror);
+					
+				}else if(listapeliculas.get(i).genero=="comedia"){
+					
+					peliscomedia += listapeliculas.get(i).dameGenero();
+	            	 System.out.println(peliscomedia);
+					
+				}else if(listapeliculas.get(i).genero=="Sci-fi"){
+					
+					pelisficcion += listapeliculas.get(i).dameGenero();
+	            	 System.out.println(pelisficcion);
+					
+				}else {
+					
+				}
+	             
+	             
+			}
+	        
 
 	}
+}

@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class pelisCienciaFicción extends JFrame {
+public class pelisCienciaFiccion extends JFrame {
 
 	private JPanel contentPane;
 
@@ -25,7 +25,7 @@ public class pelisCienciaFicción extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					pelisCienciaFicción frame = new pelisCienciaFicción();
+					pelisCienciaFiccion frame = new pelisCienciaFiccion();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class pelisCienciaFicción extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public pelisCienciaFicción() {
+	public pelisCienciaFiccion() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1032, 612);
 		contentPane = new JPanel();
