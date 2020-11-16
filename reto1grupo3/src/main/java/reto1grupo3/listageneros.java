@@ -13,32 +13,69 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class listageneros {
+public class listageneros  {
 	
-	public listageneros(String nombre, String genero, double hora) {
-		
-		this.nombre=nombre;
-		this.genero=genero;
-		this.hora=hora;
-		
+	   static class Peliculas {
 
-	}
+	        public String nombre, genero;
+	        public double hora;
+	        // Constructor de la clase
+	        public Peliculas(String nombre, String genero, double hora) {
+	            this.nombre = nombre;
+	            this.genero = genero;
+	            this.hora = hora;
+	        }
+
+	    }
+	   
+	    // Método para imprimir el array de Peliculas
+	    static void imprimeArrayPeliculas(Peliculas[] array) {
+	        for (int i = 0; i < array.length; i++) {
+	    		if (array[i].genero == "drama") {
+	    			System.out.println((i+1) + ". " + array[i].nombre + " - Genero: " + array[i].genero + " - Duración: " + array[i].hora);
+		    		}
+
+	        }
+	    }
 	
-	public String dameDatos() {
-		
-		return "La película se llama: "+nombre+" Pertenece al genero: "+genero+" Duración:"+hora;
-		
-	}
-	
-	public String dameGenero() {
-		
-		return "La película se llama: "+nombre+" Pertenece al genero: "+genero+" Duración:"+hora+"\n";
-		
-	}
-	
-	
-	public String nombre, genero;
-	private double hora;
+	    
+	    public static void main(String[] args) {
+	    	EventQueue.invokeLater(new Runnable() {
+	    		public void run() {
+	    			try {
+	    			listageneros window = new listageneros();
+	    			window.frame.setVisible(true);
+	    			} catch (Exception e) {
+	    			e.printStackTrace();
+	    			}
+	    		}
+	    	});
+	    	
+	    	
+	    	Peliculas arrayObjetospelis[]=new Peliculas[16];
+
+	        arrayObjetospelis[0]=new Peliculas("Avatar", "Sci-fi", 2.22);
+	        arrayObjetospelis[1]=new Peliculas("Star Trek", "Sci-fi", 1.15);
+	        arrayObjetospelis[2]=new Peliculas("Push", "Sci-fi", 1.55);
+	        arrayObjetospelis[3]=new Peliculas("Priest", "Sci-fi", 1.57);
+	        arrayObjetospelis[4]=new Peliculas("Monster Inc", "comedia", 1.21);
+	        arrayObjetospelis[5]=new Peliculas("30 Minutes Or Less", "comedia", 1.21);
+	        arrayObjetospelis[6]=new Peliculas("Knocked Up", "comedia", 1.34); 
+	        arrayObjetospelis[7]=new Peliculas("Alvin y las ardillas", "comedia", 1.28); 
+	        arrayObjetospelis[8]=new Peliculas("Insidious", "terror", 1.49); 
+	        arrayObjetospelis[9]=new Peliculas("Destino Final 5", "terror", 2.26); 
+	        arrayObjetospelis[10]=new Peliculas("The Uninvited", "terror", 2.35); 
+	        arrayObjetospelis[11]=new Peliculas("Constantine", "terror", 1.50); 
+	        arrayObjetospelis[12]=new Peliculas("Black Swan", "drama", 1.56); 
+	        arrayObjetospelis[13]=new Peliculas("8 Mile", "drama", 3.17); 
+	        arrayObjetospelis[14]=new Peliculas("In Time", "drama", 2.22); 
+	        arrayObjetospelis[15]=new Peliculas("Inception", "drama", 2.13); 
+	        
+	        imprimeArrayPeliculas(arrayObjetospelis);
+	        
+	    }
+
+	   
 
 
 	public JButton btnDrama, btnNSci, btnComedia, btnTerror, btn_inicio, btn_continuar;
@@ -69,6 +106,15 @@ public void initialize() {
 	frame.getContentPane().setLayout(null);
 
 	JButton btnDrama = new JButton("Drama");
+	btnDrama.addActionListener(new ActionListener() {
+	public void actionPerformed(ActionEvent arg1) {
+		
+		
+	pelisDrama frame = new pelisDrama();
+	frame.setVisible(true);
+	
+	}
+	});
 	btnDrama.setForeground(Color.WHITE);
 	btnDrama.setBackground(Color.BLACK);
 	btnDrama.setBounds(28, 85, 139, 37);
@@ -77,6 +123,7 @@ public void initialize() {
 	JButton btnNSci = new JButton("Sci-Fi");
 	btnNSci.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
+		
 	pelisCienciaFiccion frame = new pelisCienciaFiccion();
 	frame.setVisible(true);
 	
@@ -165,10 +212,12 @@ public void initialize() {
 }
 
 
-public void actionPerformed(ActionEvent e){
+public void actionPerformed(ActionEvent e, Peliculas[] arrayObjetospelis){
 
 	
 		if(e.getSource()==btnDrama){
+			
+			imprimeArrayPeliculas(arrayObjetospelis);
 			
 			pelisDrama frame = new pelisDrama();
 			frame.setBounds(10,100,500,500);
@@ -192,18 +241,7 @@ public void actionPerformed(ActionEvent e){
 /**
 * Launch the application.
 */
-public static void main(String[] args) {
-	EventQueue.invokeLater(new Runnable() {
-		public void run() {
-			try {
-			listageneros window = new listageneros();
-			window.frame.setVisible(true);
-			} catch (Exception e) {
-			e.printStackTrace();
-			}
-		}
-	});
-}
+
 }
 
 
