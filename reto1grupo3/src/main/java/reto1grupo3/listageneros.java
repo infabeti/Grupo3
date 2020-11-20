@@ -3,9 +3,12 @@ package reto1grupo3;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -27,16 +30,23 @@ public class listageneros  {
 	        }
 	    }
 	   
+	   
 	    // Método para imprimir el array de Peliculas
 	    static String imprimeArrayPeliculas(Peliculas[] array) {
-	    	String resultado = "";
+	    	
+	    	 
+	    	String pelisdrama = "";
+	    	//DefaultListModel<Object> model = new DefaultListModel<>();
 	        for (int i = 0; i < array.length; i++) {
 	    		if (array[i].genero == "drama") {
 	    			// System.out.println((i+1) + ". " + array[i].nombre + " - Genero: " + array[i].genero + " - Duración: " + array[i].hora);
-		    		resultado += array[i].nombre + "\n";
+					pelisdrama += array[i].nombre + "\n";
+					//model.addElement(pelisdrama);
+//					Component afa =array[i].nombre;
+					pelisDrama.recibpelisdr.addItem(array[i].nombre);
 	    		}	
 	        }
-	        return resultado;
+	        return pelisdrama;
 	    }
 	
 	    
@@ -55,26 +65,7 @@ public class listageneros  {
 	    	});
 	    	
 	    	
-	    	Peliculas arrayObjetospelis[]=new Peliculas[16];
 
-	        arrayObjetospelis[0]=new Peliculas("Avatar", "Sci-fi", 2.22);
-	        arrayObjetospelis[1]=new Peliculas("Star Trek", "Sci-fi", 1.15);
-	        arrayObjetospelis[2]=new Peliculas("Push", "Sci-fi", 1.55);
-	        arrayObjetospelis[3]=new Peliculas("Priest", "Sci-fi", 1.57);
-	        arrayObjetospelis[4]=new Peliculas("Monster Inc", "comedia", 1.21);
-	        arrayObjetospelis[5]=new Peliculas("30 Minutes Or Less", "comedia", 1.21);
-	        arrayObjetospelis[6]=new Peliculas("Knocked Up", "comedia", 1.34); 
-	        arrayObjetospelis[7]=new Peliculas("Alvin y las ardillas", "comedia", 1.28); 
-	        arrayObjetospelis[8]=new Peliculas("Insidious", "terror", 1.49); 
-	        arrayObjetospelis[9]=new Peliculas("Destino Final 5", "terror", 2.26); 
-	        arrayObjetospelis[10]=new Peliculas("The Uninvited", "terror", 2.35); 
-	        arrayObjetospelis[11]=new Peliculas("Constantine", "terror", 1.50); 
-	        arrayObjetospelis[12]=new Peliculas("Black Swan", "drama", 1.56); 
-	        arrayObjetospelis[13]=new Peliculas("8 Mile", "drama", 3.17); 
-	        arrayObjetospelis[14]=new Peliculas("In Time", "drama", 2.22); 
-	        arrayObjetospelis[15]=new Peliculas("Inception", "drama", 2.13); 
-	        
-	        imprimeArrayPeliculas(arrayObjetospelis);
 	        
 	    }
 
@@ -131,8 +122,9 @@ public void initialize() {
 	btnDrama.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
 		
-		String resultado = imprimeArrayPeliculas(arrayObjetospelis);
-		pelisDrama frame = new pelisDrama(resultado);
+		String pelisdrama = imprimeArrayPeliculas(arrayObjetospelis);
+	
+		pelisDrama frame = new pelisDrama(pelisdrama);
 		frame.setVisible(true);
 		
 	

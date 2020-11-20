@@ -9,11 +9,15 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.SystemColor;
 import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class pelisDrama extends JFrame {
 
 	private JPanel contentPane;
 	static JTextField txtCodigo;
+	public static JComboBox recibpelisdr = new JComboBox();
 	
 
 
@@ -37,7 +41,7 @@ public class pelisDrama extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public pelisDrama(String resultado) {
+	public pelisDrama(String pelisdrama) {
 		
         
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,10 +59,24 @@ public class pelisDrama extends JFrame {
 		contentPane.add(LabelTitulo);
 		
 		txtCodigo = new JTextField();
-		txtCodigo.setBounds(43, 124, 412, 359);
+		txtCodigo.setBounds(43, 124, 300, 359);
 		contentPane.add(txtCodigo);
 		txtCodigo.setColumns(10);
-		txtCodigo.setText(resultado);
+		txtCodigo.setText(pelisdrama);
+		recibpelisdr.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println(recibpelisdr.getSelectedItem().toString());
+
+				
+			}
+		});
+		
+		recibpelisdr.setBounds(459, 292, 153, 40);
+		contentPane.add(recibpelisdr);
+		
+		
+		
+		
 		
 	
 	}
