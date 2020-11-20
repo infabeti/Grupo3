@@ -24,9 +24,9 @@ public class pelisDrama extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					pelisDrama frame = new pelisDrama();
-					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
+					//pelisDrama frame = new pelisDrama();
+					//frame.setVisible(true);
+					//frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -37,8 +37,7 @@ public class pelisDrama extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public pelisDrama() {
-		
+	public pelisDrama(String resultado) {
 		
         
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,6 +58,7 @@ public class pelisDrama extends JFrame {
 		txtCodigo.setBounds(43, 124, 412, 359);
 		contentPane.add(txtCodigo);
 		txtCodigo.setColumns(10);
+		txtCodigo.setText(resultado);
 		
 	
 	}
