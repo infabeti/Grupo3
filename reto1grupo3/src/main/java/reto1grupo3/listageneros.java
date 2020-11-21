@@ -3,11 +3,9 @@ package reto1grupo3;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import java.awt.Component;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -36,19 +34,62 @@ public class listageneros  {
 	    	
 	    	 
 	    	String pelisdrama = "";
-	    	//DefaultListModel<Object> model = new DefaultListModel<>();
 	        for (int i = 0; i < array.length; i++) {
 	    		if (array[i].genero == "drama") {
 	    			// System.out.println((i+1) + ". " + array[i].nombre + " - Genero: " + array[i].genero + " - Duración: " + array[i].hora);
-					pelisdrama += array[i].nombre + "\n";
-					//model.addElement(pelisdrama);
-//					Component afa =array[i].nombre;
-					pelisDrama.recibpelisdr.addItem(array[i].nombre);
+					//pelisdrama += array[i].nombre + " - Duración: " + array[i].hora + "\n";
+	    	        String saberhora = array[i].hora + "";
+	    	        String horadrama = saberhora.substring(0, saberhora.indexOf("."));
+	    	        String mindrama = saberhora.substring(saberhora.indexOf(".")).substring(1);
+
+					pelisDrama.recibpelisdr.addItem(array[i].nombre + " - Duración: " + horadrama+" h "+ mindrama +" minutos" + "\n");
 	    		}	
 	        }
 	        return pelisdrama;
 	    }
-	
+	        
+	      static String imprimeArrayPeliculas1(Peliculas[] array) {
+	    	String peliscomedia = "";
+	        for (int i = 0; i < array.length; i++) {
+	    		if (array[i].genero == "comedia") {
+	    			
+	    	        String saberhora = array[i].hora + "";
+	    	        String horadrama = saberhora.substring(0, saberhora.indexOf("."));
+	    	        String mindrama = saberhora.substring(saberhora.indexOf(".")).substring(1);
+
+					pelisComedia.recibpelisdr.addItem(array[i].nombre + " - Duración: " + horadrama+" h "+ mindrama +" minutos" + "\n");
+	    		}	
+	        }
+	        return peliscomedia;
+	    }
+	    
+	      static String imprimeArrayPeliculas2(Peliculas[] array) {
+	    	String peliscienfic = "";
+	        for (int i = 0; i < array.length; i++) {
+	    		if (array[i].genero == "Sci-fi") {
+	    	        String saberhora = array[i].hora + "";
+	    	        String horadrama = saberhora.substring(0, saberhora.indexOf("."));
+	    	        String mindrama = saberhora.substring(saberhora.indexOf(".")).substring(1);
+
+	    	        pelisCienciaFiccion.recibpelisdr.addItem(array[i].nombre + " - Duración: " + horadrama+" h "+ mindrama +" minutos" + "\n");
+	    		}	
+	        }
+	        return peliscienfic;
+	    }
+	      
+	      static String imprimeArrayPeliculas3(Peliculas[] array) {
+	    	String pelisterror = "";
+	        for (int i = 0; i < array.length; i++) {
+	    		if (array[i].genero == "terror") {
+	    	        String saberhora = array[i].hora + "";
+	    	        String horadrama = saberhora.substring(0, saberhora.indexOf("."));
+	    	        String mindrama = saberhora.substring(saberhora.indexOf(".")).substring(1);
+
+	    	        pelisTerror.recibpelisdr.addItem(array[i].nombre + " - Duración: " + horadrama+" h "+ mindrama +" minutos" + "\n");
+	    		}	
+	        }
+	        return pelisterror;
+	    }
 	    
 	    public static void main(String[] args) {
 	    	
@@ -57,16 +98,13 @@ public class listageneros  {
 	    		public void run() {
 	    			try {
 	    			listageneros window = new listageneros();
-	    			window.frame.setVisible(true);
+	    			window.listagen.setVisible(true);
 	    			} catch (Exception e) {
 	    			e.printStackTrace();
 	    			}
 	    		}
 	    	});
-	    	
-	    	
-
-	        
+   
 	    }
 
 	   
@@ -75,7 +113,7 @@ public class listageneros  {
 	public JButton btnDrama, btnNSci, btnComedia, btnTerror, btn_inicio, btn_continuar;
 
 
-	public  JFrame frame;
+	public  JFrame listagen;
 	public  JTextField tiemposabado;
 	private JTextField tiempodomingo;
 	
@@ -111,12 +149,12 @@ public void initialize() {
     arrayObjetospelis[14]=new Peliculas("In Time", "drama", 2.22); 
     arrayObjetospelis[15]=new Peliculas("Inception", "drama", 2.13);
     
-	frame = new JFrame();
-	frame.getContentPane().setBackground(Color.WHITE);
-	frame.setBackground(Color.WHITE);
-	frame.setBounds(100, 100, 819, 697);
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.getContentPane().setLayout(null);
+	listagen = new JFrame();
+	listagen.getContentPane().setBackground(Color.WHITE);
+	listagen.setBackground(Color.WHITE);
+	listagen.setBounds(100, 100, 819, 697);
+	listagen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	listagen.getContentPane().setLayout(null);
 
 	JButton btnDrama = new JButton("Drama");
 	btnDrama.addActionListener(new ActionListener() {
@@ -126,6 +164,7 @@ public void initialize() {
 	
 		pelisDrama frame = new pelisDrama(pelisdrama);
 		frame.setVisible(true);
+		listagen.dispose();
 		
 	
 	}
@@ -134,61 +173,68 @@ public void initialize() {
 	btnDrama.setForeground(Color.WHITE);
 	btnDrama.setBackground(Color.BLACK);
 	btnDrama.setBounds(28, 85, 139, 37);
-	frame.getContentPane().add(btnDrama);
+	listagen.getContentPane().add(btnDrama);
 
 	JButton btnNSci = new JButton("Sci-Fi");
 	btnNSci.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
-		
-	pelisCienciaFiccion frame = new pelisCienciaFiccion();
-	frame.setVisible(true);
-	
+		String peliscienfic = imprimeArrayPeliculas2(arrayObjetospelis);
+		pelisCienciaFiccion frame = new pelisCienciaFiccion(peliscienfic);
+		frame.setVisible(true);
+		listagen.dispose();
 	}
 	});
 	btnNSci.setForeground(Color.WHITE);
 	btnNSci.setBackground(Color.BLACK);
 	btnNSci.setBounds(194, 85, 139, 37);
-	frame.getContentPane().add(btnNSci);
+	listagen.getContentPane().add(btnNSci);
 
 	JButton btnComedia = new JButton("Comedia");
 	btnComedia.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
-	pelisComedia frame = new pelisComedia();
-	frame.setVisible(true);
+		
+		String peliscomedia = imprimeArrayPeliculas1(arrayObjetospelis);
+		pelisComedia frame = new pelisComedia(peliscomedia);
+		frame.setVisible(true);
+		listagen.dispose();
 	}
 	});
 	btnComedia.setForeground(Color.WHITE);
 	btnComedia.setBackground(Color.BLACK);
 	btnComedia.setBounds(362, 85, 139, 37);
-	frame.getContentPane().add(btnComedia);
+	listagen.getContentPane().add(btnComedia);
 
 	JButton btnTerror = new JButton("Terror");
 	btnTerror.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
-	pelisTerror frame = new pelisTerror();
-	frame.setVisible(true);
+			
+		String pelisterror = imprimeArrayPeliculas3(arrayObjetospelis);
+		pelisTerror frame = new pelisTerror(pelisterror);
+		frame.setVisible(true);
+		listagen.dispose();
 	}
 	});
+		
 	btnTerror.setForeground(Color.WHITE);
 	btnTerror.setBackground(Color.BLACK);
 	btnTerror.setBounds(536, 85, 139, 37);
-	frame.getContentPane().add(btnTerror);
+	listagen.getContentPane().add(btnTerror);
 
 	JLabel lblSeleccion = new JLabel("PELÍCULAS YA SELECCIONADAS");
 	lblSeleccion.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 17));
 	lblSeleccion.setBounds(28, 156, 245, 20);
-	frame.getContentPane().add(lblSeleccion);
+	listagen.getContentPane().add(lblSeleccion);
 
        
         JLabel lblNewLabel = new JLabel("TIEMPO RESTANTE:");
         lblNewLabel.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 17));
         lblNewLabel.setBounds(612, 159, 145, 14);
-        frame.getContentPane().add(lblNewLabel);
+        listagen.getContentPane().add(lblNewLabel);
        
         JLabel lblNewLabel_1 = new JLabel("S\u00C1BADO:");
         lblNewLabel_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 15));
         lblNewLabel_1.setBounds(612, 215, 117, 28);
-        frame.getContentPane().add(lblNewLabel_1);
+        listagen.getContentPane().add(lblNewLabel_1);
        
 
         double totalSabado = variablesPeliculas.horasabados - 1 ;
@@ -200,14 +246,14 @@ public void initialize() {
         tiemposabado.setHorizontalAlignment(SwingConstants.CENTER);
         tiemposabado.setFont(new Font("Tahoma", Font.PLAIN, 15));
         tiemposabado.setBounds(612, 254, 145, 28);
-        frame.getContentPane().add(tiemposabado);
+        listagen.getContentPane().add(tiemposabado);
         tiemposabado.setColumns(10);
         tiemposabado.setText(horarestsab+" h "+ minrestsab +" minutos");
        
         JLabel lblNewLabel_1_1 = new JLabel("DOMINGO:");
         lblNewLabel_1_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 15));
         lblNewLabel_1_1.setBounds(612, 310, 117, 28);
-        frame.getContentPane().add(lblNewLabel_1_1);
+        listagen.getContentPane().add(lblNewLabel_1_1);
        
         double totalDomingo = variablesPeliculas.horadomingos - 1;
         String restDomingo = totalDomingo + "";
@@ -217,9 +263,22 @@ public void initialize() {
         tiempodomingo.setHorizontalAlignment(SwingConstants.CENTER);
         tiempodomingo.setFont(new Font("Tahoma", Font.PLAIN, 15));
         tiempodomingo.setBounds(612, 349, 145, 28);
-        frame.getContentPane().add(tiempodomingo);
+        listagen.getContentPane().add(tiempodomingo);
         tiempodomingo.setColumns(10);
         tiempodomingo.setText(horarestdom+" h "+ minrestdom +" minutos");
+        
+        JButton btnNewButton = new JButton("SALIR");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		
+        		System.exit(0);
+        	}
+        });
+        btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+        btnNewButton.setForeground(Color.WHITE);
+        btnNewButton.setBackground(Color.BLACK);
+        btnNewButton.setBounds(331, 537, 139, 37);
+        listagen.getContentPane().add(btnNewButton);
        
 
      
@@ -229,11 +288,6 @@ public void initialize() {
 
 
 public void actionPerformed(ActionEvent e, Peliculas[] arrayObjetospelis){
-
-	
-		if(e.getSource()==btnDrama){
-			
-		}
 
         if(e.getSource()==btn_inicio){
 
@@ -249,9 +303,6 @@ public void actionPerformed(ActionEvent e, Peliculas[] arrayObjetospelis){
    
      }
 
-/**
-* Launch the application.
-*/
 
 }
 
