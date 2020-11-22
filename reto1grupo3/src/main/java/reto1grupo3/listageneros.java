@@ -3,16 +3,19 @@ package reto1grupo3;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class listageneros  {
 	
@@ -110,12 +113,12 @@ public class listageneros  {
 	   
 
 
-	public JButton btnDrama, btnNSci, btnComedia, btnTerror, btn_inicio, btn_continuar;
+	public JButton btnNewButton_1, btnCienciaFiccion, btnNewButton_2, btnNewButton_3, btn_inicio, btn_continuar,btnNewButton_4;
 
 
 	public  JFrame listagen;
 	public  JTextField tiemposabado;
-	private JTextField tiempodomingo;
+	public JTextField tiempodomingo;
 	
 
 	
@@ -149,15 +152,29 @@ public void initialize() {
     arrayObjetospelis[14]=new Peliculas("In Time", "drama", 2.22); 
     arrayObjetospelis[15]=new Peliculas("Inception", "drama", 2.13);
     
+    
+    //PANEL
 	listagen = new JFrame();
 	listagen.getContentPane().setBackground(Color.WHITE);
 	listagen.setBackground(Color.WHITE);
-	listagen.setBounds(100, 100, 819, 697);
+	listagen.setBounds(100, 100, 1033, 611);
 	listagen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	listagen.getContentPane().setLayout(null);
+	listagen.setLocationRelativeTo(null);
+	
+	
+	
+	
+	
+	
 
-	JButton btnDrama = new JButton("Drama");
-	btnDrama.addActionListener(new ActionListener() {
+
+	
+	
+	// BOTONES
+
+	JButton btnNewButton_1 = new JButton("DRAMA");
+	btnNewButton_1.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
 		
 		String pelisdrama = imprimeArrayPeliculas(arrayObjetospelis);
@@ -166,17 +183,19 @@ public void initialize() {
 		frame.setVisible(true);
 		listagen.dispose();
 		
+		
 	
 	}
 	});
 	
-	btnDrama.setForeground(Color.WHITE);
-	btnDrama.setBackground(Color.BLACK);
-	btnDrama.setBounds(28, 85, 139, 37);
-	listagen.getContentPane().add(btnDrama);
+		btnNewButton_1.setForeground(SystemColor.text);
+		btnNewButton_1.setBackground(Color.BLACK);
+		btnNewButton_1.setFont(new Font("Bell MT", Font.BOLD, 25));
+		btnNewButton_1.setBounds(46, 180, 192, 111);
+		listagen.getContentPane().add(btnNewButton_1);
 
-	JButton btnNSci = new JButton("Sci-Fi");
-	btnNSci.addActionListener(new ActionListener() {
+	JButton btnCienciaFiccion = new JButton("SCI-FI");
+	btnCienciaFiccion.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
 		String peliscienfic = imprimeArrayPeliculas2(arrayObjetospelis);
 		pelisCienciaFiccion frame = new pelisCienciaFiccion(peliscienfic);
@@ -184,13 +203,14 @@ public void initialize() {
 		listagen.dispose();
 	}
 	});
-	btnNSci.setForeground(Color.WHITE);
-	btnNSci.setBackground(Color.BLACK);
-	btnNSci.setBounds(194, 85, 139, 37);
-	listagen.getContentPane().add(btnNSci);
+		btnCienciaFiccion.setBackground(Color.BLACK);
+		btnCienciaFiccion.setForeground(SystemColor.text);
+		btnCienciaFiccion.setFont(new Font("Bell MT", Font.BOLD, 25));
+		btnCienciaFiccion.setBounds(300, 180, 179, 111);
+		listagen.getContentPane().add(btnCienciaFiccion);
 
-	JButton btnComedia = new JButton("Comedia");
-	btnComedia.addActionListener(new ActionListener() {
+	JButton btnNewButton_2 = new JButton("COMEDIA");
+	btnNewButton_2.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
 		
 		String peliscomedia = imprimeArrayPeliculas1(arrayObjetospelis);
@@ -199,13 +219,14 @@ public void initialize() {
 		listagen.dispose();
 	}
 	});
-	btnComedia.setForeground(Color.WHITE);
-	btnComedia.setBackground(Color.BLACK);
-	btnComedia.setBounds(362, 85, 139, 37);
-	listagen.getContentPane().add(btnComedia);
+		btnNewButton_2.setBackground(Color.BLACK);
+		btnNewButton_2.setForeground(SystemColor.text);
+		btnNewButton_2.setFont(new Font("Bell MT", Font.BOLD, 25));
+		btnNewButton_2.setBounds(543, 180, 179, 111);
+		listagen.getContentPane().add(btnNewButton_2);
 
-	JButton btnTerror = new JButton("Terror");
-	btnTerror.addActionListener(new ActionListener() {
+		JButton btnNewButton_3 = new JButton("TERROR");
+		btnNewButton_3.addActionListener(new ActionListener() {
 	public void actionPerformed(ActionEvent arg1) {
 			
 		String pelisterror = imprimeArrayPeliculas3(arrayObjetospelis);
@@ -215,76 +236,134 @@ public void initialize() {
 	}
 	});
 		
-	btnTerror.setForeground(Color.WHITE);
-	btnTerror.setBackground(Color.BLACK);
-	btnTerror.setBounds(536, 85, 139, 37);
-	listagen.getContentPane().add(btnTerror);
+		btnNewButton_3.setBackground(Color.BLACK);
+		btnNewButton_3.setForeground(SystemColor.text);
+		btnNewButton_3.setFont(new Font("Bell MT", Font.BOLD, 25));
+		btnNewButton_3.setBounds(793, 180, 179, 111);
+		listagen.getContentPane().add(btnNewButton_3);
+	
+	
+	 JButton btnNewButton_4 = new JButton("Salir");
+     btnNewButton_4.addActionListener(new ActionListener() {
+     	public void actionPerformed(ActionEvent arg0) {
+     		
+     		System.exit(0);
+     	}
+     });
+     	btnNewButton_4.setForeground(SystemColor.text);
+		btnNewButton_4.setBackground(Color.BLACK);
+		btnNewButton_4.setFont(new Font("Baskerville Old Face", Font.BOLD, 30));
+		btnNewButton_4.setBounds(464, 523, 105, 38);
+		listagen.getContentPane().add(btnNewButton_4);
 
-	JLabel lblSeleccion = new JLabel("PELÍCULAS YA SELECCIONADAS");
-	lblSeleccion.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 17));
-	lblSeleccion.setBounds(28, 156, 245, 20);
-	listagen.getContentPane().add(lblSeleccion);
-
-       
-        JLabel lblNewLabel = new JLabel("TIEMPO RESTANTE:");
-        lblNewLabel.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 17));
-        lblNewLabel.setBounds(612, 159, 145, 14);
-        listagen.getContentPane().add(lblNewLabel);
-       
-        JLabel lblNewLabel_1 = new JLabel("S\u00C1BADO:");
-        lblNewLabel_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 15));
-        lblNewLabel_1.setBounds(612, 215, 117, 28);
-        listagen.getContentPane().add(lblNewLabel_1);
-       
-
-        double totalSabado = variablesPeliculas.horasabados - 1 ;
+	
+        
+        //JLABEL TEXTOS
+    	
+        JLabel lblNewLabel_8 = new JLabel("Domingo:");
+		lblNewLabel_8.setForeground(SystemColor.text);
+		lblNewLabel_8.setFont(new Font("Bell MT", Font.BOLD, 30));
+		lblNewLabel_8.setBounds(658, 419, 146, 65);
+		listagen.getContentPane().add(lblNewLabel_8);
+        
+        
+        JLabel lblNewLabel_7 = new JLabel("Sabado:");
+		lblNewLabel_7.setForeground(SystemColor.text);
+		lblNewLabel_7.setFont(new Font("Bell MT", Font.BOLD, 30));
+		lblNewLabel_7.setBounds(346, 419, 126, 65);
+		listagen.getContentPane().add(lblNewLabel_7);
+        
+        
+     
+        JLabel lblNewLabel_6 = new JLabel("Tiempo restante");
+		lblNewLabel_6.setForeground(SystemColor.text);
+		lblNewLabel_6.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 40));
+		lblNewLabel_6.setBounds(20, 423, 334, 49);
+		listagen.getContentPane().add(lblNewLabel_6);
+        
+        
+        JLabel lblNewLabel_5 = new JLabel("Selecciona Un Genero");
+		lblNewLabel_5.setForeground(SystemColor.text);
+		lblNewLabel_5.setFont(new Font("Bell MT", Font.BOLD, 50));
+		lblNewLabel_5.setBounds(259, 31, 499, 79);
+		listagen.getContentPane().add(lblNewLabel_5);
+        
+        
+        //TIEMPO JTextField
+		
+		
+		double totalSabado = variablesPeliculas.horasabados - 1 ;
         String restsabado = totalSabado + "";
         String horarestsab = restsabado.substring(0, restsabado.indexOf("."));
         String minrestsab = restsabado.substring(0, restsabado.indexOf("."));
        
         tiemposabado = new JTextField();
-        tiemposabado.setHorizontalAlignment(SwingConstants.CENTER);
-        tiemposabado.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        tiemposabado.setBounds(612, 254, 145, 28);
+        tiemposabado.setFont(new Font("Bell MT", Font.BOLD, 20));
+        tiemposabado.setBounds(454, 434, 162, 38);
         listagen.getContentPane().add(tiemposabado);
         tiemposabado.setColumns(10);
         tiemposabado.setText(horarestsab+" h "+ minrestsab +" minutos");
        
-        JLabel lblNewLabel_1_1 = new JLabel("DOMINGO:");
-        lblNewLabel_1_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 15));
-        lblNewLabel_1_1.setBounds(612, 310, 117, 28);
-        listagen.getContentPane().add(lblNewLabel_1_1);
-       
+		
+    	
         double totalDomingo = variablesPeliculas.horadomingos - 1;
         String restDomingo = totalDomingo + "";
         String horarestdom = restDomingo.substring(0, restDomingo.indexOf("."));
         String minrestdom = restDomingo.substring(0, restDomingo.indexOf("."));
+        
         tiempodomingo = new JTextField();
-        tiempodomingo.setHorizontalAlignment(SwingConstants.CENTER);
-        tiempodomingo.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        tiempodomingo.setBounds(612, 349, 145, 28);
+        tiempodomingo.setFont(new Font("Bell MT", Font.BOLD, 20));
+        tiempodomingo.setBounds(793, 434, 162, 38);
         listagen.getContentPane().add(tiempodomingo);
         tiempodomingo.setColumns(10);
         tiempodomingo.setText(horarestdom+" h "+ minrestdom +" minutos");
+
+       
         
-        JButton btnNewButton = new JButton("SALIR");
-        btnNewButton.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent arg0) {
-        		
-        		System.exit(0);
-        	}
-        });
-        btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-        btnNewButton.setForeground(Color.WHITE);
-        btnNewButton.setBackground(Color.BLACK);
-        btnNewButton.setBounds(331, 537, 139, 37);
-        listagen.getContentPane().add(btnNewButton);
+       
+        
+        
+     
+        
+       
        
 
-     
+     //JLABEL IMAGENES
+		
+        JLabel lblNewLabel_2 = new JLabel("New label");
+    	lblNewLabel_2.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngegg (6).png"));
+    	lblNewLabel_2.setBounds(263, 150, 256, 203);
+    	listagen.getContentPane().add(lblNewLabel_2);
+    	
+    	JLabel lblNewLabel_3 = new JLabel("New label");
+    	lblNewLabel_3.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngegg (6).png"));
+    	lblNewLabel_3.setBounds(508, 150, 250, 203);
+    	listagen.getContentPane().add(lblNewLabel_3);
+    	
+    	JLabel lblNewLabel_4 = new JLabel("New label");
+    	lblNewLabel_4.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngegg (6).png"));
+    	lblNewLabel_4.setBounds(757, 150, 250, 203);
+    	listagen.getContentPane().add(lblNewLabel_4);
+    	
+    	JLabel lblNewLabel_9 = new JLabel("");
+    	lblNewLabel_9.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\pngegg (6).png"));
+    	lblNewLabel_9.setBounds(20, 150, 250, 203);
+    	listagen.getContentPane().add(lblNewLabel_9);
+    	
+    	JLabel lblNewLabel_10 = new JLabel("");
+    	lblNewLabel_10.setForeground(UIManager.getColor("Button.highlight"));
+    	lblNewLabel_10.setFont(new Font("Baskerville Old Face", Font.BOLD, 40));
+    	lblNewLabel_10.setIcon(new ImageIcon("C:\\eclipse-workspace\\Grupo3\\reto1grupo3\\src\\imagenes\\FondoAzul.png"));
+    	lblNewLabel_10.setBounds(0, 0, 1024, 572);
+    	listagen.getContentPane().add(lblNewLabel_10);
 
-
+    	
+    	
+    	
+    	
 }
+
+
 
 
 public void actionPerformed(ActionEvent e, Peliculas[] arrayObjetospelis){
@@ -305,5 +384,4 @@ public void actionPerformed(ActionEvent e, Peliculas[] arrayObjetospelis){
 
 
 }
-
 
